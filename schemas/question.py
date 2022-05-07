@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 
 class QuestionModel(BaseModel):
+    """Модель вопроса для валидации"""
     question_id: int
     question: str
     answer: str

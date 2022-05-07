@@ -6,6 +6,7 @@ Model = DB.model
 
 
 class Question(Model):
+    """Модель вопроса в базе данных"""
     __tablename__ = "questions"
     id = Column(Integer, primary_key=True, nullable=False)
     question_id = Column(Integer, index=True, unique=True)

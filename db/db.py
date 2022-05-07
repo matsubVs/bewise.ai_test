@@ -8,6 +8,8 @@ from sqlalchemy.orm import sessionmaker
 
 class DBLayer:
 
+    """Слой базы данных"""
+
     db_config = {
         "drivername": "postgresql",
         "host": "pg",
@@ -28,6 +30,7 @@ class DBLayer:
         )
 
     def __create_engine(self) -> None:
+        """Создает подключение к базе данных"""
         self.engine = create_engine(URL(**DBLayer.db_config))
         self.engine.connect()
 

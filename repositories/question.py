@@ -9,6 +9,7 @@ from schemas.question import QuestionModel
 
 
 class QuestionRepository:
+    """Хранилище (слой управления) таблицей с вопросами"""
     def __init__(self, db: Session = Depends(get_db)):
         self.db = db
 

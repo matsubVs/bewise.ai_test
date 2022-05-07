@@ -12,13 +12,14 @@ router = APIRouter(prefix="/questions", tags=["questions"])
 
 @router.get("/", response_model=List[QuestionModel])
 def list_questions(q_limit: int = 10, questions: QuestionRepository = Depends()):
+    """Вывод всех вопросов"""
     db_questions = questions.all(q_limit=q_limit)
     return parse_obj_as(List[QuestionModel], db_questions)
 
 
 @router.post("/{question_num}", response_model=QuestionModel, status_code=status.HTTP_201_CREATED)
 def request_questions(question_num: int, questions: QuestionRepository = Depends()):
-
+    """Создание уникальных вопросов в базе данных"""
     if question_num < 1:
         return []
 

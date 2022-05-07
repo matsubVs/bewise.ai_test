@@ -6,6 +6,7 @@ from schemas.question import QuestionModel
 
 
 def get_questions(count: int) -> List[QuestionModel]:
+    """Получение вопросов из публичного API и их валидация"""
     req = requests.get("https://jservice.io/api/random?count=" + str(count))
     data = req.json()
 

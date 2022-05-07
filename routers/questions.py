@@ -7,7 +7,7 @@ from public_api_requests import get_questions
 from repositories.question import QuestionRepository
 from schemas.question import QuestionModel
 
-router = APIRouter(prefix="/questions", tags=["questions"])
+router = APIRouter(prefix="", tags=["main"])
 
 
 @router.get("/", response_model=List[QuestionModel])
